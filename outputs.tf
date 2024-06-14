@@ -1,5 +1,5 @@
 output "role_arn" {
-  value = aws_iam_role.ec2-role.arn
+  value = aws_iam_role.role.arn
 }
 
 output "policy_arn" {
