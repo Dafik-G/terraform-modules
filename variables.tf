@@ -10,5 +10,5 @@ variable "instance_type" {
 
 variable "instance_name" {
   type = string
-  description = "instance-name of my-instance"
+  description = "instance-name to my-instance"
 }
