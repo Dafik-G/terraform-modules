@@ -1,4 +1,5 @@
 resource "aws_iam_role" "ec2-role" {
+  name = var.role_name
   assume_role_policy = jsonencode(
     {
       version = "2012-10-17",
@@ -13,7 +14,6 @@ resource "aws_iam_role" "ec2-role" {
       ]
     }
   )
-  name = var.role_name
   tags = {
     Name = var.role_name
     Environment = var.environment
