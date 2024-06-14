@@ -1,4 +1,4 @@
-resource "aws_iam_role" "ec2-role" {
+resource "aws_iam_role" "role" {
   name = var.role_name
   assume_role_policy = jsonencode(
     {
@@ -41,6 +41,6 @@ resource "aws_iam_policy" "s3-read-only" {
 }
 
 resource "aws_iam_role_policy_attachment" "attach-policy" {
-  role       = aws_iam_role.ec2-role.name
+  role       = aws_iam_role.role.name
   policy_arn = aws_iam_policy.s3-read-only.arn
 }
