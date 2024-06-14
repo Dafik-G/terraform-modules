@@ -23,3 +23,8 @@ variable "policy_name" {
   default     = ""
   description = "policy-name that is attaching to role"
 }
+
+variable "environment" {
+  type = string
+  description = "environment that we worked in"
+}

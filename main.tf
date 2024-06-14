@@ -16,6 +16,7 @@ resource "aws_iam_role" "ec2-role" {
   name = var.role_name
   tags = {
     Name = var.role_name
+    Environment = var.environment
   }
 }
 resource "aws_iam_policy" "s3-read-only" {
@@ -35,7 +36,8 @@ resource "aws_iam_policy" "s3-read-only" {
   name = var.policy_name
   tags = {
     Name = var.policy_name
-  }
+    Environment = var.environment
+    }
 }
 
 resource "aws_iam_role_policy_attachment" "attach-policy" {
