@@ -2,6 +2,7 @@ resource "aws_iam_role" "role" {
   name = var.role_name
   assume_role_policy = jsonencode(
     { 
+      "Version" : "2012-10-17",
       "Statement" : [
         {
           "Action" : "sts:AssumeRole"
@@ -28,7 +29,7 @@ resource "aws_iam_policy" "s3-read-only" {
           "s3:GetObject",
           "s3:ListBucket",
         ],
-        "Resource" : "arn:aws:s3:::var.resource-s3bucket"
+        "Resource" : "arn:aws:s3:::${var.resource-s3bucket}"
       }
     ]
   })
